@@ -50,4 +50,6 @@ const deleteMovie = async (req, res, next) => {
   } catch (error) {
     return next(error);
   }
+
+  module.exports = { getMovies, postMovie, putMovie, deleteMovie };
 };
