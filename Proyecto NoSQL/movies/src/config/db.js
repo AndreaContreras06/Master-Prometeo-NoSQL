@@ -1,11 +1,7 @@
-const express = require("express");
+const mongoose = require("mongoose");
 
-const movieRoutes = require("./api/routes/movie.routes");
-const cinemaRoutes = require("./api/routes/cinema.routes");
+const connectDB = async () => {
+  await mongoose.connect(process.env.MONGODB_URI);
+};
 
-const app = express();
-
-app.use(express.json());
-
-app.use("/movies", movieRoutes);
-app.use("/cinemas", cinemaRoutes);
+module.exports = connectDB;
